@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gowri Gopan — Business Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E17;
+    --bg-alt:#0F1320;
+    --card:#141928;
+    --card-border:#232A3D;
+    --text:#E7E9F1;
+    --text-soft:#9AA1B4;
+    --accent-1:#7C5CFF;
+    --accent-2:#4FD1C5;
+    --grad:linear-gradient(135deg,#7C5CFF 0%,#4FD1C5 100%);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;color:var(--text);}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+  a{color:inherit;}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(11,14,23,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--card-border);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;}
+  nav .brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;}
+  nav .brand span{color:var(--accent-2);font-weight:400;font-size:13px;display:block;}
+  nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0;}
+  nav ul li a{text-decoration:none;font-size:14px;color:var(--text-soft);transition:color .15s;}
+  nav ul li a:hover{color:var(--text);}
+  .nav-cta{font-size:13px;padding:8px 16px;border-radius:8px;background:var(--grad);color:#0B0E17;font-weight:600;text-decoration:none;}
+  @media(max-width:800px){nav ul{display:none;}}
+
+  .hero{padding:88px 0 70px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{
+    content:'';position:absolute;top:-140px;left:50%;transform:translateX(-50%);
+    width:640px;height:420px;background:radial-gradient(circle,rgba(124,92,255,0.28) 0%,rgba(124,92,255,0) 70%);
+    pointer-events:none;
+  }
+  .avatar{
+    width:104px;height:104px;border-radius:50%;margin:0 auto 22px;
+    background:var(--grad);display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;color:#0B0E17;
+    position:relative;z-index:1;
+  }
+  .badge{
+    display:inline-block;font-size:12px;color:var(--accent-2);border:1px solid rgba(79,209,197,0.4);
+    background:rgba(79,209,197,0.08);padding:5px 14px;border-radius:999px;margin-bottom:20px;position:relative;z-index:1;
+  }
+  .hero h1{font-size:clamp(32px,5vw,50px);position:relative;z-index:1;}
+  .hero .role{font-size:17px;color:var(--accent-2);margin-top:10px;position:relative;z-index:1;}
+  .hero p.lede{max-width:56ch;margin:20px auto 0;color:var(--text-soft);font-size:16px;position:relative;z-index:1;}
+  .hero-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px;position:relative;z-index:1;}
+  .hero-links a{
+    font-size:14px;padding:9px 18px;border-radius:8px;border:1px solid var(--card-border);
+    text-decoration:none;color:var(--text);transition:.15s;
+  }
+  .hero-links a:hover{border-color:var(--accent-1);color:var(--accent-1);}
+  .hero-links a.primary{background:var(--grad);color:#0B0E17;font-weight:600;border:none;}
+
+  section{padding:70px 0;border-top:1px solid var(--card-border);}
+  .section-head{text-align:center;max-width:60ch;margin:0 auto 44px;}
+  .section-head .eyebrow{font-size:13px;color:var(--accent-2);margin-bottom:8px;}
+  .section-head h2{font-size:28px;}
+  .section-head p{color:var(--text-soft);margin-top:12px;font-size:15px;}
+
+  .card{
+    background:var(--card);border:1px solid var(--card-border);border-radius:14px;
+    padding:26px;transition:transform .18s, border-color .18s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:var(--accent-1);}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .skill-icon{
+    width:38px;height:38px;border-radius:10px;background:var(--grad);
+    display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:16px;
+  }
+  .card h3{font-size:16px;margin-bottom:8px;}
+  .card p{color:var(--text-soft);font-size:14px;margin:0;}
+
+  .project-card{overflow:hidden;padding:0;}
+  .project-banner{
+    height:120px;background:var(--grad);display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk',sans-serif;font-size:15px;color:rgba(11,14,23,0.75);font-weight:600;
+  }
+  .project-body{padding:24px;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .tags span{
+    font-size:11px;color:var(--accent-2);border:1px solid rgba(79,209,197,0.35);
+    padding:3px 10px;border-radius:999px;
+  }
+  .project-body h3{font-size:18px;margin-bottom:8px;}
+  .project-body p{color:var(--text-soft);font-size:14px;}
+  .project-date{font-size:12px;color:var(--text-soft);margin-top:14px;}
+
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .cert-card .cert-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+  .cert-date{font-size:12px;color:var(--accent-2);white-space:nowrap;}
+  .cert-card h3{font-size:15px;margin:10px 0 6px;}
+  .cert-card p{font-size:13px;}
+
+  .uni-card{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;padding:0;}
+  .uni-visual{background:var(--grad);padding:32px;display:flex;flex-direction:column;justify-content:center;color:#0B0E17;}
+  .uni-visual .stat{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;}
+  .uni-visual .stat-label{font-size:13px;margin-top:4px;opacity:.85;}
+  .uni-info{padding:32px;}
+  .uni-info h3{font-size:20px;}
+  .uni-info .place{color:var(--text-soft);font-size:14px;margin-top:6px;}
+  .uni-info .meta{font-size:13px;color:var(--accent-2);margin-top:10px;}
+  @media(max-width:760px){.uni-card{grid-template-columns:1fr;}}
+
+  .edu-second{margin-top:18px;}
+
+  .achievement-card{display:flex;align-items:center;gap:18px;}
+  .achievement-card .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--grad);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:19px;
+  }
+  .achievement-card h3{font-size:15px;}
+  .achievement-card p{font-size:13px;margin-top:4px;}
+  .achievement-card .date{display:block;margin-top:8px;font-size:12px;color:var(--accent-2);}
+
+  footer{padding:50px 0;text-align:center;color:var(--text-soft);font-size:13px;}
+  footer .foot-name{font-family:'Space Grotesk',sans-serif;color:var(--text);font-size:17px;margin-bottom:6px;}
+  footer .foot-links{display:flex;justify-content:center;gap:18px;margin:16px 0;flex-wrap:wrap;}
+  footer .foot-links a{text-decoration:none;color:var(--text-soft);font-size:13px;}
+  footer .foot-links a:hover{color:var(--accent-2);}
+
+  @media(max-width:760px){
+    .grid-3{grid-template-columns:1fr;}
+    .grid-2{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Gowri Gopan<span>Business Analyst</span></div>
+    <ul>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#university">University</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="avatar">GG</div>
+    <div class="badge">Aspiring Business Analyst</div>
+    <h1>Gowri Gopan</h1>
+    <div class="role">Business Analysis · Data Analytics · Power BI &amp; Python</div>
+    <p class="lede">I'm currently pursuing my B.Tech in Computer Science (Honours in Data Science &amp; Data Engineering) at Lovely Professional University. I work at the intersection of business analysis and data — gathering requirements, structuring ambiguous problems, and building the dashboards and analyses that turn data into decisions.</p>
+    <div class="hero-links">
+      <a href="mailto:gowrigopan922@gmail.com">Email</a>
+      <a href="tel:+917012895892">Phone</a>
+      <a href="https://www.linkedin.com/in/gowri-gopan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/gowri70" target="_blank" rel="noopener">GitHub</a>
+      <a class="primary" href="#" title="Add a link to your CV file once hosted">Download Resume</a>
+    </div>
+  </div>
+</header>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Technical Skills</div>
+      <h2>What I bring to the table</h2>
+      <p>Grounded in business analysis fundamentals, backed by hands-on data and BI tooling.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="skill-icon">📋</div>
+        <h3>Requirements Gathering</h3>
+        <p>Turning stakeholder needs into clear, actionable requirements and problem statements.</p>
+      </div>
+      <div class="card">
+        <div class="skill-icon">🤝</div>
+        <h3>Stakeholder Communication</h3>
+        <p>Presenting technical findings in plain language for non-technical audiences and building trust along the way.</p>
+      </div>
+      <div class="card">
+        <div class="skill-icon">📊</div>
+        <h3>KPI Reporting</h3>
+        <p>Designing metrics and dashboards that give stakeholders a fast, accurate read on performance.</p>
+      </div>
+      <div class="card">
+        <div class="skill-icon">🗄️</div>
+        <h3>SQL &amp; Excel</h3>
+        <p>Querying, cleaning, and modelling data for analysis and reporting.</p>
+      </div>
+      <div class="card">
+        <div class="skill-icon">📈</div>
+        <h3>Power BI</h3>
+        <p>Building interactive dashboards with KPIs, CAGR, and category-wise breakdowns for business decisions.</p>
+      </div>
+      <div class="card">
+        <div class="skill-icon">🐍</div>
+        <h3>Python for Analysis</h3>
+        <p>Pandas, NumPy, Matplotlib and Seaborn for data cleaning, exploration, and visualization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Projects Portfolio</div>
+      <h2>Selected work</h2>
+      <p>Data and BI projects built end-to-end — from ambiguous questions to stakeholder-ready answers.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card project-card">
+        <div class="project-banner">DocSensei</div>
+        <div class="project-body">
+          <div class="tags"><span>LangChain</span><span>Streamlit</span><span>Python</span><span>ChromaDB</span></div>
+          <h3>DocSensei — AI Document Q&amp;A System</h3>
+          <p>RAG-based semantic search over PDF and DOCX files, turning ambiguous queries into precise, actionable answers and cutting manual research time.</p>
+          <div class="project-date">Jul '26</div>
+        </div>
+      </div>
+      <div class="card project-card">
+        <div class="project-banner">Export Analytics</div>
+        <div class="project-body">
+          <div class="tags"><span>Python</span><span>Power BI</span><span>Pandas</span><span>Excel</span></div>
+          <h3>Indian Export Analytics Dashboard</h3>
+          <p>Five years (FY2021–FY2025) of export data distilled into an interactive Power BI dashboard with KPIs, CAGR, and commodity- and country-wise breakdowns.</p>
+          <div class="project-date">May '26</div>
+        </div>
+      </div>
+      <div class="card project-card">
+        <div class="project-banner">Heart Disease</div>
+        <div class="project-body">
+          <div class="tags"><span>Python</span><span>Power BI</span></div>
+          <h3>Heart Disease Data Analysis</h3>
+          <p>End-to-end cleaning and exploratory analysis of a healthcare dataset, with a Power BI dashboard built to communicate risk factors clearly.</p>
+          <div class="project-date">Dec '24</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Certifications &amp; Courses</div>
+      <h2>Continuous learning</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card cert-card">
+        <div class="cert-top"><h3>Basic to Beyond Python</h3><span class="cert-date">Jan '25</span></div>
+        <p>Foundational to advanced Python programming.</p>
+      </div>
+      <div class="card cert-card">
+        <div class="cert-top"><h3>Data Management (Excel &amp; Tableau)</h3><span class="cert-date">Mar '25</span></div>
+        <p>Data organization, cleaning, and visualization workflows.</p>
+      </div>
+      <div class="card cert-card">
+        <div class="cert-top"><h3>Advanced Diploma in Innovations and Digital Transformation</h3><span class="cert-date">Sep '24</span></div>
+        <p>Digital transformation strategy and innovation frameworks.</p>
+      </div>
+      <div class="card cert-card">
+        <div class="cert-top"><h3>Microsoft Learn CODE STORM Hackathon</h3><span class="cert-date">Mar '25</span></div>
+        <p>Competitive hackathon on the Microsoft Learn platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Training &amp; Simulations</div>
+      <h2>Applied, hands-on learning</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card cert-card">
+        <div class="cert-top"><h3>LLMs and AI Agents</h3><span class="cert-date">Jul '26</span></div>
+        <p>Hands-on training covering prompt engineering, agentic workflows, and AI-driven automation for business problem-solving.</p>
+      </div>
+      <div class="card cert-card">
+        <div class="cert-top"><h3>Deloitte Data Analytics Job Simulation — Forage</h3><span class="cert-date">May '25</span></div>
+        <p>Simulated real-world data analytics engagement: structured problem-solving, stakeholder communication, and business recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="university">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Academic Journey</div>
+      <h2>My University Experience</h2>
+    </div>
+    <div class="card uni-card">
+      <div class="uni-visual">
+        <div class="stat">7.89</div>
+        <div class="stat-label">CGPA / 10</div>
+        <div class="stat" style="margin-top:18px;">Jun '24</div>
+        <div class="stat-label">Batch start — present</div>
+      </div>
+      <div class="uni-info">
+        <h3>Lovely Professional University</h3>
+        <div class="place">Phagwara, Punjab, India</div>
+        <div class="meta">B.Tech CSE — Honours in Data Science &amp; Data Engineering</div>
+      </div>
+    </div>
+
+    <div class="card edu-second">
+      <h3 style="font-size:16px;">Sree Narayana Central School (CBSE)</h3>
+      <div class="place" style="color:var(--text-soft);font-size:14px;margin-top:6px;">Class XII — Kerala, India</div>
+      <div class="meta" style="color:var(--accent-2);font-size:13px;margin-top:8px;">Apr '22 – Jun '23 · 81%</div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Achievements</div>
+      <h2>Recognition along the way</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card achievement-card">
+        <div class="icon">🏆</div>
+        <div>
+          <h3>First Place — IDEATHON</h3>
+          <p>Kerala Startup Mission. Recognised for structuring and pitching a winning idea under competition constraints.</p>
+          <span class="date">Nov '22</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-name">Gowri Gopan</div>
+    <div>Business Analysis · Data Analytics · Power BI</div>
+    <div class="foot-links">
+      <a href="mailto:gowrigopan922@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/gowri-gopan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/gowri70" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div>© 2026 Gowri Gopan. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
