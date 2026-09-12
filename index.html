@@ -111,6 +111,28 @@
   .project-body h3{font-size:18px;margin-bottom:8px;}
   .project-body p{color:var(--text-soft);font-size:14px;}
   .project-date{font-size:12px;color:var(--text-soft);margin-top:14px;}
+  .project-links{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+}
+
+.project-links a{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:8px;
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  transition:.2s ease;
+}
+
+.project-links a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.35);
+}
 
   .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
   .cert-card .cert-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
@@ -244,6 +266,10 @@
           <h3>DocSensei — AI Document Q&amp;A System</h3>
           <p>RAG-based semantic search over PDF and DOCX files, turning ambiguous queries into precise, actionable answers and cutting manual research time.</p>
           <div class="project-date">Jul '26</div>
+          <div class="project-links">
+  <a href="https://github.com/rohitranjankumar-01/DocSensei" target="_blank">View GitHub</a>
+  <a href="https://docsensei.streamlit.app/" target="_blank">Live Demo</a>
+</div>
         </div>
       </div>
       <div class="card project-card">
